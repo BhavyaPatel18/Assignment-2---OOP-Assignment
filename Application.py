@@ -11,8 +11,7 @@ class Product:
         self.total_sold = 0
         self.total_manufactured = 0
     
-    @classmethod
-    def from_input(cls):
+    def from_input(classmethod):
         while True:
             try:
                 code = int(input("Enter product code (100-1000): "))
@@ -60,7 +59,7 @@ class Product:
             except ValueError:
                 print("Invalid monthly production. Please enter a non-negative integer.")
         
-        return cls(code, name, sale_price, manufacture_cost, stock_level, monthly_production)
+        return classmethod(code, name, sale_price, manufacture_cost, stock_level, monthly_production)
     
     def simulate_month(self):
         units_sold = random.randint(self.monthly_production - 10, self.monthly_production + 10)
